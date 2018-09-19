@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .item:checked {
+      font-size: 30px;
+      width: 50px;
+      height: 50px;
+    }
+
+    .item:checked + p {
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox" class="item">
+<p>我是内容</p>
+<p>我也是内容</p>
+<button id="btn">
+  存储数据
+</button>
+<button id="btn1">
+  取数据
+</button>
+</body>
+<script>
+  var btn = document.getElementById('btn')
+  var btn1 = document.getElementById('btn1')
+  btn.onclick = function () {
+    // 存数据
+
+    // localStorage.setItem('sex', 'man')
+    sessionStorage.removeItem('sex')
+  }
+
+  btn1.onclick = function () {
+    let info = localStorage.getItem('sex')
+    console.log(info);
+  }
+
+
+</script>
+</html>
